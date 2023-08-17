@@ -48,11 +48,11 @@ def alert(msg):
 	TaskDialog.Show('Скрипт закончил свою работу!', msg)
 
 def mm_to_feet (MTF_mm):
-	MTF_feet = MTF_mm/304.8
+	MTF_feet = MTF_mm / 304.8
 	return MTF_feet
 	
 def feet_to_mm (MTF_feet):
-	MTF_mm = MTF_feet*304.8
+	MTF_mm = MTF_feet * 304.8
 	return MTF_mm
 
 def get_bb_props(el):
@@ -74,7 +74,7 @@ def get_parameter(elem, param_name):
 
 	element = UnwrapElement(elem)
 	instance_parameters_list = list(map(lambda x: x.Definition.Name, element.Parameters)) # список параметров экземпляра
-	symbol_parameters_list = list(map(lambda x: x.Definition.Name, element.Symbol.Parameters)) # список параметров экземпляра
+	symbol_parameters_list = list(map(lambda x: x.Definition.Name, element.Symbol.Parameters)) # список параметров типа
 
 	if param_name in instance_parameters_list:
 		value = element.LookupParameter(param_name).AsDouble()
